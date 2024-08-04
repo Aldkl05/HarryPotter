@@ -1,0 +1,50 @@
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="8dp"
+    app:cardCornerRadius="8dp"
+    app:cardElevation="4dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="16dp">
+
+        <ImageView
+            android:id="@+id/spell_icon"
+            android:layout_width="96dp"
+            android:layout_height="96dp"
+            android:layout_gravity="center_vertical"
+            android:src="@drawable/ic_wand"
+
+        android:layout_marginEnd="16dp" />
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/spell_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Spell Name"
+                android:textAppearance="?attr/textAppearanceHeadline6"
+                android:textColor="@android:color/black" />
+
+            <TextView
+                android:id="@+id/spell_description"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Spell Description"
+                android:textAppearance="?attr/textAppearanceBody1"
+                android:textColor="@android:color/darker_gray"
+                android:layout_marginTop="4dp" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+</androidx.cardview.widget.CardView>

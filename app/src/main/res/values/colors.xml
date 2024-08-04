@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+
+    <color name="background_dark_blue">#0D1B2A</color>
+    <color name="background_charcoal">#1B263B</color>
+
+    <color name="primary_gold">#FFD700</color>
+    <color name="primary_silver">#C0C0C0</color>
+
+    <color name="gryffindor_scarlet">#7F0909</color>
+    <color name="gryffindor_gold">#FFC500</color>
+    <color name="hufflepuff_yellow">#FFDB00</color>
+    <color name="hufflepuff_black">#000000</color>
+    <color name="ravenclaw_blue">#0E1A40</color>
+    <color name="ravenclaw_bronze">#946B2D</color>
+    <color name="slytherin_green">#1A472A</color>
+    <color name="slytherin_silver">#C0C0C0</color>
+
+    <color name="accent_white">#FFFFFF</color>
+    <color name="accent_light_gray">#EAEAEA</color>
+    </resources>
+
