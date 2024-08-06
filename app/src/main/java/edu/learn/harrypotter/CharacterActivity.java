@@ -40,9 +40,9 @@ public class CharacterActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_character);
-        recyclerView = findViewById(R.id.charcaterRecyclerView);
-
-        recyclerView.setLayoutManager(new LinearLayoutManager(this));
+        //TODO
+        // assocaite recyclerview here
+        // SET LAYOUT FOR RECYCLER VIEW I.E LINEAR LAYOUT
 
 
         requestTOServer();
@@ -110,9 +110,11 @@ public class CharacterActivity extends AppCompatActivity {
                                 characterList.add(character);
                             }
 
-                            characterAdapter = new CharacterAdapter(CharacterActivity.this, characterList);
-                            recyclerView.setAdapter(characterAdapter);
-                            // Handle the ArrayList of characters here (e.g., update UI)
+                            //TODO
+                            //SET ADAPATE HERE I.E CHARACTER ADAPTER
+                            // set adapter to recycler view
+
+
 
                         } catch (JSONException e) {
                             e.printStackTrace();

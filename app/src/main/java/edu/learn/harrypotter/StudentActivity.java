@@ -41,8 +41,8 @@ public class StudentActivity extends AppCompatActivity {
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_student);
         recyclerView = findViewById(R.id.allStudentsRecyclerView);
-        recyclerView.setLayoutManager(new LinearLayoutManager(this));
-
+        //TODO
+        // SET LAYOUT FOR RECYCLER VIEW I.E LINEAR LAYOUT
         requestTOServer();
     }
 
@@ -106,9 +106,10 @@ public class StudentActivity extends AppCompatActivity {
                                 characterList.add(character);
                             }
 
-                            characterAdapter = new CharacterAdapter(StudentActivity.this, characterList);
-                            recyclerView.setAdapter(characterAdapter);
-                            // Handle the ArrayList of characters here (e.g., update UI)
+                            //TODO
+                            //SET ADAPATE HERE I.E CHARACTER ADAPTER
+                            // set adapter to recycler view
+
 
                         } catch (JSONException e) {
                             e.printStackTrace();
