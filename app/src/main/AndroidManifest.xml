@@ -15,6 +15,9 @@
         android:theme="@style/Theme.HarryPotter"
         tools:targetApi="31">
         <activity
+            android:name=".item_basic_grid"
+            android:exported="false" />
+        <activity
             android:name="edu.learn.harrypotter.QuizActivity"
             android:exported="false" />
         <activity

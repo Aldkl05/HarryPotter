@@ -28,6 +28,7 @@ import org.json.JSONObject;
 import java.util.ArrayList;
 
 import edu.learn.harrypotter.adapters.CharacterAdapter;
+import edu.learn.harrypotter.adapters.SpellAdapter;
 import edu.learn.harrypotter.models.HarryPotterCharacter;
 import edu.learn.harrypotterapp.R;
 
@@ -35,14 +36,20 @@ public class CharacterActivity extends AppCompatActivity {
     private ArrayList<HarryPotterCharacter> characterList = new ArrayList<>();
     private RecyclerView recyclerView;
     private CharacterAdapter characterAdapter;
+
+    RecyclerView.LayoutManager layoutManager;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_character);
+        recyclerView = findViewById(R.id.charcaterRecyclerView);
         //TODO
         // assocaite recyclerview here
         // SET LAYOUT FOR RECYCLER VIEW I.E LINEAR LAYOUT
+
+        layoutManager = new LinearLayoutManager(CharacterActivity.this);
+        recyclerView.setLayoutManager(layoutManager);
 
 
         requestTOServer();
@@ -113,7 +120,8 @@ public class CharacterActivity extends AppCompatActivity {
                             //TODO
                             //SET ADAPATE HERE I.E CHARACTER ADAPTER
                             // set adapter to recycler view
-
+                           characterAdapter = new CharacterAdapter(CharacterActivity.this, characterList);
+                            recyclerView.setAdapter(characterAdapter);
 
 
                         } catch (JSONException e) {

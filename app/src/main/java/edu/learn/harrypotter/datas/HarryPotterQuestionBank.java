@@ -13,7 +13,48 @@ public class HarryPotterQuestionBank {
     // populate question from the numbers
     // use of random class
 
+    int getRandom(){
+        Random random = new Random();
+        int num = random.nextInt(400);
+        return num;
+    }
 
+    public ArrayList<Integer>getQuestionsNumber(int questionCount){
+        ArrayList<Integer> questionsNumber = new ArrayList<Integer>();
+
+
+
+        //10 questions
+        int count =0;
+
+        while (count<questionCount){
+            int getQuestion = getRandom();
+
+            if(!questionsNumber.contains(getQuestion)){
+                questionsNumber.add(getQuestion);
+                count++;
+            }
+
+        }
+        Log.d ("Questions", questionsNumber.toString());
+
+
+        return questionsNumber;
+    }
+
+    public ArrayList<HarryPotterQuiz> getQuestions(ArrayList<Integer> questionNumbers){
+        ArrayList<HarryPotterQuiz> questions = new ArrayList<HarryPotterQuiz>();
+
+        ArrayList<HarryPotterQuiz> QuestionBank = questionBank();
+
+        for (int i=0; i<questionNumbers.size(); i++){
+            HarryPotterQuiz harryPotterQuiz = QuestionBank.get(questionNumbers.get(i));
+
+            questions.add(harryPotterQuiz);
+
+        }
+        return questions;
+    }
 
     private ArrayList<HarryPotterQuiz> questionBank() {
         ArrayList<HarryPotterQuiz> harryPotterQuizList = new ArrayList<>();

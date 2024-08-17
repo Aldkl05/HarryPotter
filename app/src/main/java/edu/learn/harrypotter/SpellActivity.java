@@ -7,6 +7,7 @@ import android.util.Log;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.android.volley.Request;
@@ -22,6 +23,7 @@ import org.json.JSONObject;
 
 import java.util.ArrayList;
 
+import edu.learn.harrypotter.adapters.SpellAdapter;
 import edu.learn.harrypotter.models.Spell;
 import edu.learn.harrypotterapp.R;
 
@@ -30,13 +32,30 @@ public class SpellActivity extends AppCompatActivity {
    // private SpellAdapter spellAdapter;
     // create spell adapter here // item_spell already created
     private ArrayList<Spell> spellList;
+    RecyclerView.LayoutManager layoutManager;
+
+    SpellAdapter spellAdapter;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_spell);
         spellList = new ArrayList<Spell>();
-       // set adapter and view type of recylyer here and reqeuest to server
+        recyclerView = findViewById(R.id.allSpellRecyclerView);
+
+
+        //set layout
+
+        //setting adapter to layout
+
+         layoutManager = new LinearLayoutManager(SpellActivity.this);
+        recyclerView.setLayoutManager(layoutManager);
+
+requestTOServer();
+
+
+        // set adapter and view type of recylyer here and reqeuest to server
+
 
 
     }
@@ -72,12 +91,8 @@ public class SpellActivity extends AppCompatActivity {
 
                             }
 
-//                            spellAdapter = new SpellAdapter( spellList);
-//                            recyclerView.setAdapter(spellAdapter);
-
-//                            characterAdapter = new CharacterAdapter(StaffActivity.this, characterList);
-//                            recyclerView.setAdapter(characterAdapter);
-                            // Handle the ArrayList of characters here (e.g., update UI)
+                            spellAdapter = new SpellAdapter(SpellActivity.this,spellList);
+                            recyclerView.setAdapter(spellAdapter);
 
                         } catch (JSONException e) {
                             e.printStackTrace();

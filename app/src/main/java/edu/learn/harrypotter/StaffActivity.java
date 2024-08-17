@@ -35,6 +35,7 @@ public class StaffActivity extends AppCompatActivity {
     private ArrayList<HarryPotterCharacter> characterList = new ArrayList<>();
     private RecyclerView recyclerView;
     private CharacterAdapter characterAdapter;
+    RecyclerView.LayoutManager layoutManager;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -43,7 +44,8 @@ public class StaffActivity extends AppCompatActivity {
         recyclerView = findViewById(R.id.allStaffRecyclerView);
         //TODO
         // SET LAYOUT FOR RECYCLER VIEW I.E LINEAR LAYOUT
-
+        layoutManager = new LinearLayoutManager(this);
+        recyclerView.setLayoutManager(layoutManager);
 
         requestTOServer();
 
@@ -112,6 +114,9 @@ public class StaffActivity extends AppCompatActivity {
                             //TODO
                             //SET ADAPATE HERE I.E CHARACTER ADAPTER
                             // set adapter to recycler view
+
+                            characterAdapter = new CharacterAdapter(StaffActivity.this,characterList);
+                            recyclerView.setAdapter(characterAdapter);
 
                         } catch (JSONException e) {
                             e.printStackTrace();

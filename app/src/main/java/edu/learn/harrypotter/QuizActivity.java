@@ -29,6 +29,11 @@ public class QuizActivity extends AppCompatActivity {
 
         recyclerView = findViewById(R.id.Quizrecycler_view);
 
+        HarryPotterQuestionBank questionBank = new HarryPotterQuestionBank();
+        ArrayList<HarryPotterQuiz> questions =
+                questionBank.getQuestions(questionBank.getQuestionsNumber(15));
+
+
 
         // write an algorthim to generte random harrypotter question
         // with given paramenter of total questions in
@@ -38,8 +43,10 @@ public class QuizActivity extends AppCompatActivity {
         //
         //        questions =  get your questions from questionbanks.
 
+        recyclerView.setLayoutManager(new LinearLayoutManager(this));
+
+
         quizAdapter = new QuizAdapter(this, questions);
         recyclerView.setAdapter(quizAdapter);
-        recyclerView.setLayoutManager(new LinearLayoutManager(this));
     }
 }
